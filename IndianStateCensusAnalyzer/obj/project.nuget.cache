@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "vPHXATlWxLaiduIAFtOkP7AZLh3OrfUB3QXcebVmf1P5mCIpsX3Xg54+IzjazPEB6aL/KEgbTwt8yopCcGFlTA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\scorp\\Desktop\\IndianStateCensusAnalyzer\\IndianStateCensusAnalyzer\\IndianStateCensusAnalyzer.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\scorp\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.13\\microsoft.windowsdesktop.app.ref.6.0.13.nupkg.sha512",
+    "C:\\Users\\scorp\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.13\\microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
+    "C:\\Users\\scorp\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.13\\microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
+    "C:\\Users\\scorp\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.13\\microsoft.netcore.app.host.win-x64.6.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}
