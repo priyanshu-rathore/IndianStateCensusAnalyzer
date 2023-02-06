@@ -55,5 +55,14 @@ namespace CensusAnalyzerTest
             var customException = Assert.Throws<CensusAnalyserException>(() => csvAdapter.LoadCsvData(CensusAnalyser.Country.INDIA, wrongTypeFilePath, "State,Population,AreaInSqKm,DensityPerSqKm"));
             Assert.AreEqual(expected, customException.exception);
         }
+
+        //TC 1.4 Given correct path but wrong delimiter should return custom exception - File Containers Wrong Delimiter
+        [Test]
+        public void GivenWrongDelimiterReturnCustomException()
+        {
+            var expected = CensusAnalyserException.ExceptionType.INCORRECT_DELIMITER;
+            var customException = Assert.Throws<CensusAnalyserException>(() => csvAdapter.LoadCsvData(CensusAnalyser.Country.INDIA, wrongDelimiterFilePath, "State,Population,AreaInSqKm,DensityPerSqKm"));
+            Assert.AreEqual(expected, customException.exception);
+        }
     }
 }
