@@ -46,5 +46,14 @@ namespace CensusAnalyzerTest
             var customException = Assert.Throws<CensusAnalyserException>(() => csvAdapter.LoadCsvData(CensusAnalyser.Country.INDIA, wrongFilePath, "State,Population,AreaInSqKm,DensityPerSqKm"));
             Assert.AreEqual(expected, customException.exception);
         }
+
+        //TC 1.3 Given correct path but incorrect file type should return custom exception - Invalid file type
+        [Test]
+        public void GivenWrongFileTypeReturnCustomException()
+        {
+            var expected = CensusAnalyserException.ExceptionType.INVALID_FILE_TYPE;
+            var customException = Assert.Throws<CensusAnalyserException>(() => csvAdapter.LoadCsvData(CensusAnalyser.Country.INDIA, wrongTypeFilePath, "State,Population,AreaInSqKm,DensityPerSqKm"));
+            Assert.AreEqual(expected, customException.exception);
+        }
     }
 }
