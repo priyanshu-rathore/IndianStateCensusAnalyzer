@@ -37,5 +37,14 @@ namespace CensusAnalyzerTest
             stateRecords = csvAdapter.LoadCsvData(CensusAnalyser.Country.INDIA, stateCensusFilePath, "State,Population,AreaInSqKm,DensityPerSqKm");
             Assert.AreEqual(expected, stateRecords.Count);
         }
+
+        //TC 1.2 Given incorrect file should return custom exception - File not found
+        [Test]
+        public void GivenWrongFileReturnCustomException()
+        {
+            var expected = CensusAnalyserException.ExceptionType.FILE_NOT_FOUND;
+            var customException = Assert.Throws<CensusAnalyserException>(() => csvAdapter.LoadCsvData(CensusAnalyser.Country.INDIA, wrongFilePath, "State,Population,AreaInSqKm,DensityPerSqKm"));
+            Assert.AreEqual(expected, customException.exception);
+        }
     }
 }
