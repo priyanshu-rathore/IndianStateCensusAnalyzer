@@ -64,5 +64,14 @@ namespace CensusAnalyzerTest
             var customException = Assert.Throws<CensusAnalyserException>(() => csvAdapter.LoadCsvData(CensusAnalyser.Country.INDIA, wrongDelimiterFilePath, "State,Population,AreaInSqKm,DensityPerSqKm"));
             Assert.AreEqual(expected, customException.exception);
         }
+
+        //TC 1.5 Given correct path but wrong header should return custom exception - Incorrect header in Data
+        [Test]
+        public void GivenWrongHeaderReturnCustomException()
+        {
+            var expected = CensusAnalyserException.ExceptionType.INCORRECT_HEADER;
+            var customException = Assert.Throws<CensusAnalyserException>(() => csvAdapter.LoadCsvData(CensusAnalyser.Country.INDIA, wrongHeaderFilePath, "State,Population,AreaInSqKm,DensityPerSqKm"));
+            Assert.AreEqual(expected, customException.exception);
+        }
     }
 }
